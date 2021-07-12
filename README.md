@@ -23,6 +23,8 @@ Scraper('username').then(profile => {
 });
 ```
 
+Here is [an example of the data format that is returned](https://github.com/benkaiser/linktree-scraper/blob/master/example_data.json).
+
 ## Credits
 
 I started this library off from this template: https://github.com/krasimir/webpack-library-starter
