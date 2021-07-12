@@ -5,15 +5,10 @@ const path = require("path");
 const yargs = require("yargs");
 const env = yargs.argv.env; // use --env with webpack 2
 const pkg = require("./package.json");
-const shouldExportToAMD = yargs.argv.amd;
 
 let libraryName = pkg.name;
 
 let outputFile, mode;
-
-if (shouldExportToAMD) {
-  libraryName += ".amd";
-}
 
 if (env === "build") {
   mode = "production";
@@ -25,32 +20,28 @@ if (env === "build") {
 
 const config = {
   mode: mode,
-  entry: __dirname + "/src/index.js",
+  target: 'node',
+  entry: __dirname + "/src/index.ts",
   devtool: "source-map",
   output: {
     path: __dirname + "/lib",
     filename: outputFile,
-    library: libraryName,
-    libraryTarget: shouldExportToAMD ? "amd" : "umd",
-    libraryExport: "default",
-    umdNamedDefine: true,
-    globalObject: "typeof self !== 'undefined' ? self : this",
+    libraryTarget: "umd",
+    libraryExport: "default"
   },
   module: {
     rules: [
       {
-        test: /(\.jsx|\.js|\.ts|\.tsx)$/,
+        test: /\.ts$/,
         use: {
-          loader: "babel-loader",
+          loader: "ts-loader",
         },
-        exclude: /(node_modules|bower_components)/,
       },
     ],
   },
   resolve: {
-    modules: [path.resolve("./node_modules"), path.resolve("./src")],
-    extensions: [".json", ".js"],
-  },
+    extensions: ['.ts', '.js', '.json']
+  }
 };
 
 module.exports = config;
