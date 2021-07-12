@@ -1,7 +1,7 @@
 {
   "name": "linktree-scraper",
-  "version": "2.1.1",
-  "description": "Produce universal library with webpack and es6",
+  "version": "0.1.0",
+  "description": "Scrape linktree profile data",
   "main": "lib/linktree-scraper.js",
   "scripts": {
     "dev": "webpack --progress --watch --env dev",
