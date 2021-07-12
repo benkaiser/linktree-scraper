@@ -4,8 +4,16 @@ This library helps you pull the raw JSON payload out of a linktree profile. This
 
 ## Usage
 
+Install the package
+
+```
+npm install --save linktree-scraper
+```
+
+Scrape a profile
+
 ```javascript
-const Scraper = require("./linktree-scraper");
+const Scraper = require("linktree-scraper");
 
 Scraper('username').then(profile => {
   console.log(profile);
