@@ -1,9 +1,9 @@
 {
   "name": "linktree-scraper",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Scrape linktree profile data",
   "main": "./lib/index.js",
-  "types": "./lib/main.d.ts",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc"
