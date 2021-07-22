@@ -13,7 +13,7 @@ npm install --save linktree-scraper
 Scrape a profile
 
 ```javascript
-const Scraper = require("linktree-scraper");
+const Scraper = require("linktree-scraper").default;
 
 Scraper('username').then(profile => {
   console.log(profile);

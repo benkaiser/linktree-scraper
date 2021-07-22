@@ -1,22 +1,20 @@
 {
   "name": "linktree-scraper",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Scrape linktree profile data",
-  "main": "lib/linktree-scraper.js",
+  "main": "./lib/index.js",
+  "types": "./lib/main.d.ts",
   "scripts": {
-    "dev": "webpack --progress --watch --env dev",
-    "build": "webpack --env dev && webpack --env build",
-    "repl": "node -i -e \"$(< ./lib/linktree-scraper.js)\""
+    "dev": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/benkaiser/linktree-scraper.git"
   },
   "keywords": [
-    "webpack",
-    "es6",
-    "starter",
-    "library"
+    "linktree",
+    "scraper"
   ],
   "author": "Benjamin Kaiser",
   "license": "MIT",
@@ -24,11 +22,6 @@
     "url": "https://github.com/benkaiser/linktree-scraper/issues"
   },
   "homepage": "https://github.com/benkaiser/linktree-scraper",
-  "devDependencies": {
-    "webpack": "5.11.0",
-    "webpack-cli": "4.2.0",
-    "yargs": "^10.0.3"
-  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "got": "^11.8.2",
