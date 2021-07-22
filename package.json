@@ -1,6 +1,6 @@
 {
   "name": "linktree-scraper",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Scrape linktree profile data",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/benkaiser/linktree-scraper",
   "dependencies": {
+    "@types/node-fetch": "^2.5.11",
     "cheerio": "^1.0.0-rc.10",
-    "got": "^11.8.2",
+    "node-fetch": "^2.6.1",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.5"
   }

@@ -1,11 +1,13 @@
-import got from "got/dist/source";
+import fetch, { Response } from "node-fetch";
 import * as cheerio from 'cheerio';
 import type { DataNode } from 'domhandler';
 
 export default function Scraper(profile: string): Promise<any> {
-  return got('https://linktr.ee/' + profile).then(response => {
+  return fetch('https://linktr.ee/' + profile)
+  .then((response: Response) => response.text())
+  .then((responseHtml: string) => {
     try {
-      const $ = cheerio.load(response.body);
+      const $ = cheerio.load(responseHtml);
       const data = (
         ($('#__NEXT_DATA__')[0] as cheerio.NodeWithChildren
       ).children[0] as unknown as DataNode).data;
