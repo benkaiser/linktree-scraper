@@ -38,7 +38,6 @@ export default function Scraper(profile: string): Promise<FormattedResults> {
 }
 
 function convertRawToFormattedResults(raw: any): FormattedResults {
-  console.log(raw.props.pageProps);
   return {
     title: raw.props.pageProps.pageTitle,
     username: raw.props.pageProps.account.username,
